@@ -1,17 +1,18 @@
 import HomePage from "@/pages/HomePage";
 import MovieDetailPage from "@/pages/MovieDetailPage";
-import { RouteObject, createBrowserRouter } from "react-router-dom";
+import Navbar from "@layouts/Navbar";
+import {
+  Route,
+  createBrowserRouter,
+  createRoutesFromElements,
+} from "react-router-dom";
 
-const routes: RouteObject[] = [
-  {
-    path: "/",
-    element: <HomePage />,
-  },
-  {
-    path: "/:movieName",
-    element: <MovieDetailPage />
-  },
-];
+const routes = createRoutesFromElements(
+  <Route path="/" element={<Navbar />}>
+    <Route index element={<HomePage />} />
+    <Route path="/:movieName" element={<MovieDetailPage />} />
+  </Route>,
+);
 
 const router = createBrowserRouter(routes);
 export default router;
