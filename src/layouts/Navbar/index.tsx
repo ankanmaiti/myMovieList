@@ -28,7 +28,7 @@ export default function Navbar() {
         </nav>
       </header>
 
-      <Container>
+      <Container className="py-2">
         <Outlet />
       </Container>
     </>

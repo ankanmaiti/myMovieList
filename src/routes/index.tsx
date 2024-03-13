@@ -1,4 +1,4 @@
-import HomePage from "@/pages/HomePage";
+import SearchPage from "@/pages/SearchPage";
 import MovieDetailPage from "@/pages/MovieDetailPage";
 import Navbar from "@layouts/Navbar";
 import {
@@ -9,7 +9,7 @@ import {
 
 const routes = createRoutesFromElements(
   <Route path="/" element={<Navbar />}>
-    <Route index element={<HomePage />} />
+    <Route path="/search" element={<SearchPage />} />
     <Route path="/:movieName" element={<MovieDetailPage />} />
   </Route>,
 );
